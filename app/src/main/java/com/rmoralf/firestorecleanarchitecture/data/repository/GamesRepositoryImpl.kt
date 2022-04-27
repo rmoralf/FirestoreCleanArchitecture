@@ -7,12 +7,16 @@ import com.rmoralf.firestorecleanarchitecture.core.utils.Constants.TITLE
 import com.rmoralf.firestorecleanarchitecture.domain.model.Game
 import com.rmoralf.firestorecleanarchitecture.domain.model.Response.*
 import com.rmoralf.firestorecleanarchitecture.domain.repository.GamesRepository
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
+@ExperimentalCoroutinesApi
 class GamesRepositoryImpl @Inject constructor(
     private val gamesRef: CollectionReference
 ) : GamesRepository {
